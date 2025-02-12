@@ -1,0 +1,44 @@
+/* About.css */
+.about-container {
+  gap: 2rem;
+}
+
+.profile-image {
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.about-left {
+  text-align: center;
+}
+
+.about-right {
+  background-color: transparent;
+  border: 3px solid transparent;
+  border-image: linear-gradient(135deg,#654321, #123456) 1; 
+  padding: 1.5rem;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-right .dark {
+  background-color: transparent;
+  border: 3px solid transparent;
+  border-image: linear-gradient(135deg,yellow, #123456) 1; 
+  padding: 1.5rem;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+} 
+
+.text-container p {
+  line-height: 1.6;
+}
+
+.text-container span {
+  cursor: pointer;
+}
+
+.text-container span:hover {
+  text-decoration: underline;
+}

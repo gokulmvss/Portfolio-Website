@@ -1,0 +1,36 @@
+.experience-card {
+    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: transparent; /* Light transparent background */
+    border: 3px solid transparent;
+    border-image: linear-gradient(135deg,#654321, #123456) 1; /* Gradient border */
+    transition: all 1s ease; /* Smooth transition */
+  }
+  
+   .experience-card.expanded {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly darker background when expanded */
+   }  
+
+     
+
+   /* Initially hide expandable content */
+.expandable-content {
+    display: none; /* Hide the content by default */
+    margin-top: 20px;
+    /* transition: all 0.3s ease; Smooth expansion */
+}
+
+/* Show the content when the card is expanded */
+.experience-card.expanded .expandable-content {
+    display: block; /* Show content when card is expanded */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+li {
+    color: #e0e0e0; /* Gray color for the bullet points */
+}

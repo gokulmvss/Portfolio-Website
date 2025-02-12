@@ -1,0 +1,38 @@
+.border{
+    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: transparent; /* Light transparent background */
+    border: 3px solid transparent;
+    border-image: linear-gradient(135deg,#654321, #123456) 1; /* Gradient border */
+    transition: all 1s ease; /* Smooth transition */
+}
+
+.tech-stack-item{
+    border-radius: 0.375rem;
+    border: 3px solid transparent;
+    border-image: linear-gradient(135deg,#654321, #123456) 1; 
+}
+
+.tech-stack-item:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.demo-link-button {
+    display: inline-block;
+    background: linear-gradient(30deg, rgba(229, 122, 16, 0.4), rgba(3, 30, 56, 0.4));
+    color: white;
+    font-size: 1.125rem; /* text-lg */
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-radius: 30px; /* rounded-[30px] */
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .demo-link-button:hover {
+    transform: scale(1.05); /* hover:scale-105 */
+    background: linear-gradient(180deg, rgba(101, 67, 33, 0.5), rgba(18, 52, 86, 0.5));
+  }
+
+  

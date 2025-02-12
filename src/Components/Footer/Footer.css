@@ -1,0 +1,38 @@
+/* Footer.css */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: fixed; Ensure the footer stays at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; /* Dark background color */
+    color: white; /* Text color */
+    /* padding: 0.5rem 0.5rem; */
+    z-index: 0;
+    border-top: 1px solid;
+    border-image: linear-gradient(135deg,#654321, #123456) 1;
+  }
+
+  
+  .footer-text {
+    margin: 0;
+    text-align: center;
+    flex: 1; /* Center the text */
+  }
+  
+  .scroll-to-top {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
+  }
+  
+  .scroll-to-top:hover {
+    transform: scale(1.2);
+  }
+  
