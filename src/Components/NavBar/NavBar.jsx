@@ -4,6 +4,7 @@ import { cn } from '../../utils/utils';
 import logo from '../../assets/condensed-logo-bgno.png';
 import logolight from '../../assets/condensed-logo-bgno-lightmode.png';
 import "../NavBar/Navbar.css";
+import {motion} from "framer-motion";
 import { useTheme } from '../../Context/ThemeContext';
 
 const NavBar = ({ scrollToSection, refs }) => {
@@ -76,10 +77,10 @@ const NavBar = ({ scrollToSection, refs }) => {
   );
 
   const ConnectButton = () => (
-    <button
-      className="text-lg cursor-pointer bg-gradient-to-r from-primary-start to-primary-end 
-                 text-white rounded-full py-2 px-4 
-                 hover:scale-105 transition-all duration-300"
+    <motion.button
+      className="text-lg cursor-pointer bg-gradient-to-r from-dark-start to-dark-end dark:from-light-start dark:to-light-end 
+                 text-white dark:text-black rounded-full py-2 px-4"
+      
       onClick={() => {
         const targetPosition = refs.contactRef.current.offsetTop - NAVBAR_HEIGHT;
         window.scrollTo({
@@ -88,9 +89,13 @@ const NavBar = ({ scrollToSection, refs }) => {
         });
         setIsOpen(false);
       }}
+      whileHover={{ 
+        scale: 1.05,
+        boxShadow: "0 0 20px rgba(79, 70, 229, 0.5)"
+      }}
     >
       Connect With Me
-    </button>
+    </motion.button>
   );
 
   const LogoButton = () => (
@@ -132,7 +137,7 @@ const NavBar = ({ scrollToSection, refs }) => {
     <div className="sticky top-0 left-0 z-50 w-full">
       {/* Scroll progress indicator */}
       <div
-        className="slider left-0 h-1 bg-gradient-to-r from-primary-start to-primary-end absolute"
+        className="slider left-0 h-1 bg-gradient-to-r from-dark-start to-dark-end dark:from-light-start dark:to-light-end absolute"
         style={{ width: `${scrollProgress}%` }}
       />
 

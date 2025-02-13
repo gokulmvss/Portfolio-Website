@@ -12,10 +12,12 @@
     /* padding: 0.5rem 0.5rem; */
     z-index: 0;
     border-top: 1px solid;
-    border-image: linear-gradient(135deg,#654321, #123456) 1;
+    border-image: linear-gradient(135deg, var(--border-dark-start), var(--border-dark-end)) 1;
+    /* border-image: linear-gradient(135deg,#654321, #123456) 1; */
   }
-
-  
+  .dark .footer {
+    border-image: linear-gradient(135deg, var(--border-light-start), var(--border-light-end)) 1;
+  }  
   .footer-text {
     margin: 0;
     text-align: center;

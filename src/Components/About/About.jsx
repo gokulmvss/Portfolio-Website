@@ -32,7 +32,7 @@ const About = () => {
         transition={{ type: "spring", duration: 2, bounce: 0.5 }}
       >
         {/* Heading */}
-        <h1 className="text-4xl font-bold text-indigo-400 dark:text-indigo-800 border-l-4 border-indigo-400 pl-4 mb-6 lg:mb-12">
+        <h1 className="text-4xl font-bold text-indigo-400 dark:text-yellow-400 border-l-4 border-indigo-400 dark:border-yellow-400  pl-4 lg:mb-12">
           About Me
         </h1>
         {/* Image */}
@@ -61,33 +61,31 @@ const About = () => {
           : { opacity: 0, x: isMobile ? 0 : "18vw", y: isMobile ? "20vh" : 0 }
         }
         transition={{ duration: 1, ease: "easeInOut" }}
-        className="about-right bg-gray-700 rounded-lg p-6 shadow-inner"
+        className="about-right rounded-lg p-6 shadow-inner"
       >
         <div className="text-container">
-          {/* Introduction */}
-          <p className="mb-6">
-            Hi, I'm <span className="font-semibold">Gokul Mallem</span>, a final-year Electronics and Communication Engineering (ECE) student at <span className="font-semibold">PES University, Bangalore</span>. I have a passion for bridging cutting-edge technology with practical applications, especially in <span className="font-semibold">Full-Stack Development</span> and <span className="font-semibold">Machine Learning</span>. My goal is to create scalable, impactful solutions that make a difference.
-          </p>
+        <p className="mb-6">
+          Hi, I'm <span className="font-semibold">Gokul Mallem</span>, a final-year <span className="font-semibold">ECE student at PES University, Bangalore</span>. 
+          I specialize in <span className="font-semibold">Full-Stack Development</span> and <span className="font-semibold">Machine Learning</span>, building scalable solutions that merge technology with real-world impact.
+        </p>
 
-          {/* Education */}
-          <p className="mb-6">
-            My academic journey has provided a strong foundation in electronics, communication systems, and software engineering. At PES University, I've honed my technical expertise, balancing coursework with hands-on projects that emphasize innovation and collaboration.
-          </p>
+        <p className="mb-6">
+          My academic journey has strengthened my expertise in electronics, communication systems, and software engineering. I've complemented my coursework with hands-on projects that emphasize innovation and collaboration.
+        </p>
 
-          {/* Work Experience */}
-          <p className="mb-6">
-            In my previous roles, I have worked on various impactful projects, including a <span className="font-semibold">job-seeking application</span> with advanced filtering features and recruiter dashboards, and a <span className="font-semibold">Retrieval-Augmented Generation (RAG) system</span> for personalized recommendations in the pharmaceutical industry. These experiences have solidified my skills in tools like <span className="font-semibold">React, Flask, Python, and SQL</span>, and have given me invaluable insight into end-to-end application development.
-          </p>
+        <p className="mb-6">
+          Professionally, I have worked on a <span className="font-semibold">job-seeking app</span> with recruiter dashboards and a <span className="font-semibold">Retrieval-Augmented Generation (RAG) system</span> for personalized pharma recommendations. These projects refined my skills in <span className="font-semibold">React, Flask, Python, and SQL</span>.
+        </p>
 
-          {/* Current Work */}
-          <p className="mb-6">
-            Currently, I am exploring the integration of <span className="font-semibold">Machine Learning models</span> in web applications, focusing on enhancing user experiences with predictive analytics and recommendation systems. I'm also delving into the nuances of cloud computing to expand the scalability of my projects.
-          </p>
+        <p className="mb-6">
+          Currently, I'm integrating <span className="font-semibold">ML models into web applications</span>, enhancing UX with predictive analytics and recommendation systems while exploring cloud scalability.
+        </p>
 
-          {/* Closing with navigation links */}
-          <p className="mb-6">
-            Explore my <span className="font-semibold text-indigo-400 dark:text-indigo-600 cursor-pointer" onClick={() => navigateToSection('projects-section')}>projects and work experience</span> to learn more about what I've done so far. If you'd like to connect or collaborate, feel free to reach out through the <span className="font-semibold text-green-400 cursor-pointer" onClick={() => navigateToSection('contact-section')}>Contact Me</span> section!
-          </p>
+        <p className="mb-6">
+          Check out my <span className="font-semibold text-indigo-400 dark:text-indigo-600 cursor-pointer" onClick={() => navigateToSection('projects-section')}>projects</span> or reach out through the <span className="font-semibold text-green-400 cursor-pointer" onClick={() => navigateToSection('contact-section')}>Contact Me</span> section!
+        </p>
+
+
 
           <div className="social-links flex items-center mt-6 space-x-4">
             <a

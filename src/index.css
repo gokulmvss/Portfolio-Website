@@ -13,3 +13,14 @@ body{
     /* color: aliceblue; */
     font-family: 'outfit'
 }
+
+:root {
+    /* Light Mode Border Gradient */
+    --border-light-start: yellow;
+    --border-light-end: #FF4B2B;
+  
+    /* Dark Mode Border Gradient */
+    --border-dark-start: #654321;
+    --border-dark-end: #123456;
+  }
+  

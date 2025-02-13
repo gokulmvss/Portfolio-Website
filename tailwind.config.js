@@ -43,10 +43,20 @@ export default {
         secondary: '#111111',
         accent: '#1a1a1a',
       },
+      // gradientColorStops: {
+      //   'primary-start': '#654321',
+      //   'primary-end': '#123456',
+      // }
       gradientColorStops: {
-        'primary-start': '#654321',
-        'primary-end': '#123456',
+        // 🌞 Light Mode: Fresh & Visible on White Backdrop
+        'light-start': 'yellow', 
+        'light-end': '#FF4B2B',   
+
+        'dark-start': '#654321', 
+        'dark-end': '#123456',    
+        
       }
+      
     },
   },
   plugins: [],

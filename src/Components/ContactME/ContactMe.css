@@ -1,19 +1,20 @@
 .gradient-button {
     width: 100%;
-    background: linear-gradient(to right, #654321, #123456);
     color: white;
     padding: 0.75rem 1rem;
     border-radius: 0.75rem;
-    border: 2px solid transparent;
+    border: 2px solid;
     transition: all 0.3s ease-in-out;
-    transform: scale(0.97);
+    transform: scale(1);
+    border-image: linear-gradient(135deg, var(--border-dark-start), var(--border-dark-end)) 1;
+
   }
  
 
   .gradient-button:hover {
     /* background-color: transparent; */
-    background-clip: text; /* Optional if you want a text gradient on hover */
-    border-image: linear-gradient(to right, #654321, #123456);
+    /* background-clip: text; Optional if you want a text gradient on hover */
+    background-color: linear-gradient(135deg, var(--border-dark-start), var(--border-dark-end)) 1;
     border-image-slice: 1;
     transform: scale(1);
   }

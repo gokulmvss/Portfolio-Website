@@ -36,7 +36,7 @@ const ContactMe = () => {
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1 }}
-      className="Contact-Me flex flex-col lg:flex-row p-8 rounded-lg shadow-lg bg-black-800 dark:bg-light-primary text-white dark:text-indigo-400 space-y-8 lg:space-y-0 lg:space-x-8"
+      className="Contact-Me flex flex-col lg:flex-row p-8 rounded-lg shadow-lg dark:bg-light-primary text-white space-y-8 lg:space-y-0 lg:space-x-8"
     >
       {/* Left Section: Heading and Description */}
       <motion.div 
@@ -45,7 +45,7 @@ const ContactMe = () => {
         transition={{ duration: 1, delay: 0.2 }}
         className="left flex flex-col items-center lg:items-start lg:w-1/3 p-4"
       >
-        <h1 className="text-4xl font-bold text-indigo-400 dark:text-indigo-800 border-l-4 border-indigo-400 dark:border-indigo-800 pl-4 mb-6">
+        <h1 className="text-4xl font-bold text-indigo-400 dark:text-yellow-400 border-l-4 border-indigo-400 dark:border-yellow-400 pl-4 mb-6">
           Connect With Me
         </h1>
         <p className="text-center lg:text-left text-gray-400 dark:text-black mb-6">
@@ -77,7 +77,7 @@ const ContactMe = () => {
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <label htmlFor="name" className="block text-gray-300 dark:text-indigo-600 mb-2 font-semibold">
+                <label htmlFor="name" className="block text-gray-300 dark:text-[#FF4B2B] mb-2 font-semibold">
                   Your Name
                 </label>
                 <input
@@ -99,7 +99,7 @@ const ContactMe = () => {
                 className="flex space-x-4"
               >
                 <div className="w-1/2">
-                  <label htmlFor="first-name" className="block text-gray-300 dark:text-indigo-400 mb-2 font-bold">
+                  <label htmlFor="first-name" className="block text-gray-300 dark:text-[#FF4B2B] mb-2 font-bold">
                     First Name
                   </label>
                   <input
@@ -112,7 +112,7 @@ const ContactMe = () => {
                   />
                 </div>
                 <div className="w-1/2">
-                  <label htmlFor="last-name" className="block text-gray-300 dark:text-indigo-400 mb-2 font-semibold">
+                  <label htmlFor="last-name" className="block text-gray-300 dark:text-[#FF4B2B] mb-2 font-semibold">
                     Last Name
                   </label>
                   <input
@@ -136,7 +136,7 @@ const ContactMe = () => {
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <label htmlFor="subject" className="block text-gray-300 dark:text-indigo-400 mb-2 font-semibold">
+                <label htmlFor="subject" className="block text-gray-300 dark:text-[#FF4B2B] mb-2 font-semibold">
                   Subject
                 </label>
                 <input
@@ -172,7 +172,7 @@ const ContactMe = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            <label htmlFor="message" className="block text-gray-300 dark:text-indigo-400 mb-2 font-semibold">
+            <label htmlFor="message" className="block text-gray-300 dark:text-[#FF4B2B] mb-2 font-semibold">
               Your Message
             </label>
             <textarea

@@ -148,7 +148,7 @@ const Hero = ({ scrollToSection }) => {
             variants={textItemVariants}
             className="text-2xl md:text-3xl lg:text-4xl font-bold text-white dark:text-dark-primary mb-4 leading-tight"
           >
-            Hey there! I'm Gokul, a Software Developer and aspiring Data Scientist located in Bangalore.
+            Hey there! I'm Gokul, an aspiring Software Developer located in Bangalore.
           </motion.h1>
           
           <motion.p 
@@ -161,8 +161,8 @@ const Hero = ({ scrollToSection }) => {
           <motion.button
             // variants={textItemVariants}
             onClick={scrollToSection}
-            className="text-lg cursor-pointer bg-gradient-to-r from-primary-start to-primary-end 
-                 text-white rounded-full py-2 px-4 
+            className="text-lg cursor-pointer bg-gradient-to-r from-dark-start to-dark-end dark:from-light-start dark:to-light-end 
+                 text-white dark:text-black rounded-full py-2 px-4 
                  hover:scale-105 transition-all duration-30"
             whileHover={{ 
               scale: 1.05,

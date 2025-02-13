@@ -18,15 +18,15 @@
 .about-right {
   background-color: transparent;
   border: 3px solid transparent;
-  border-image: linear-gradient(135deg,#654321, #123456) 1; 
   padding: 1.5rem;
+  border-image: linear-gradient(135deg, var(--border-dark-start), var(--border-dark-end)) 1;
   box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.about-right .dark {
+.dark .about-right {
   background-color: transparent;
   border: 3px solid transparent;
-  border-image: linear-gradient(135deg,yellow, #123456) 1; 
+  border-image: linear-gradient(135deg, var(--border-light-start), var(--border-light-end)) 1;
   padding: 1.5rem;
   box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
 } 

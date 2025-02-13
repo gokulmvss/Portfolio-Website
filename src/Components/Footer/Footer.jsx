@@ -7,7 +7,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer dark:bg-light-primary">
+    <footer className="footer dark:bg-light-primary rounded-lg">
       <p className="footer-text dark:text-dark-primary">
         © {new Date().getFullYear()} Gokul Mallem. All rights reserved.
       </p>
