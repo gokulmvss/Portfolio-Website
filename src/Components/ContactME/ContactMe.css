@@ -2,35 +2,47 @@
     width: 100%;
     color: white;
     padding: 0.75rem 1rem;
-    border-radius: 0.75rem;
     border: 2px solid;
-    transition: all 0.3s ease-in-out;
-    transform: scale(1);
     border-image: linear-gradient(135deg, var(--border-dark-start), var(--border-dark-end)) 1;
-
   }
- 
+
+  .dark .gradient-button {
+    border-image: linear-gradient(135deg, var(--border-light-start), var(--border-light-end)) 1;
+    color: var(--border-light-end);
+  } 
 
   .gradient-button:hover {
-    /* background-color: transparent; */
-    /* background-clip: text; Optional if you want a text gradient on hover */
-    background-color: linear-gradient(135deg, var(--border-dark-start), var(--border-dark-end)) 1;
+    background: linear-gradient(135deg, var(--border-dark-start), var(--border-dark-end));
     border-image-slice: 1;
-    transform: scale(1);
+    
+  }
+
+  .dark .gradient-button:hover {
+    background: linear-gradient(135deg, var(--border-light-start), var(--border-light-end));
+    border-image-slice: 1;
+    color:black;
   }
   
   .toggle-switch {
     position: relative;
     width: 50px;
     height: 24px;
-    background: #654321;
+    background: var(--border-dark-start);
     border-radius: 12px;
     cursor: pointer;
     transition: background 0.3s ease;
   }
+
+  .dark .toggle-switch{
+    background: var(--border-light-start);
+  }
   
   .toggle-switch.active {
-    background: #4f46e5; /* Indigo color */
+    background: var(--border-dark-end); /* Indigo color */
+  }
+
+  .dark .toggle-switch.active {
+    background: var(--border-light-end); /* Indigo color */
   }
   
   .toggle-switch .toggle-knob {
@@ -47,6 +59,14 @@
   
   .toggle-switch.active .toggle-knob {
     transform: translateX(26px); /* Moves the knob to the right */
+  }
+
+  #name,#first-name,#last-name,#subject,#message {
+    border-image: linear-gradient(135deg, var(--border-dark-start), var(--border-dark-end)) 1;
+  }
+  
+  .dark #name,.dark #first-name,.dark #last-name,.dark #subject,.dark #message {
+    border-image: linear-gradient(135deg, var(--border-light-start), var(--border-light-end)) 1;
   }
   
   

@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from 'framer-motion';
+import "./skills.css"
 
 const skills = [
   {
@@ -100,7 +101,7 @@ const SkillCard = ({ skill, index }) => {
       
       {/* Gradient Border */}
       <div 
-        className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        className="borders absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
           border: '5px solid transparent',
           "borderImage": 'linear-gradient(135deg,#654321, #123456) 1', /* Gradient border */

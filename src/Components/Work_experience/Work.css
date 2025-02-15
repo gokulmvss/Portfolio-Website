@@ -4,15 +4,19 @@
     border-radius: 8px;
     background-color: transparent; /* Light transparent background */
     border: 3px solid transparent;
-    border-image: linear-gradient(135deg,#654321, #123456) 1; /* Gradient border */
     transition: all 1s ease; /* Smooth transition */
+    border-image: linear-gradient(135deg, var(--border-dark-start), var(--border-dark-end)) 1;
+  }
+
+  .dark .experience-card{
+    border-image: linear-gradient(135deg, var(--border-light-start), var(--border-light-end)) 1;
+
   }
   
    .experience-card.expanded {
     background-color: rgba(255, 255, 255, 0.1); /* Slightly darker background when expanded */
-   }  
-
-     
+   }
+       
 
    /* Initially hide expandable content */
 .expandable-content {

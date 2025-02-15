@@ -76,13 +76,13 @@ const ProjectCard = ({ project, index }) => {
       }}
     >
       <div className="flex items-center justify-between mt-4">
-        <h2 className="text-lg font-semibold dark:text-indigo-600">{project.projecttitle}</h2>
+        <h2 className="text-lg font-semibold dark:text-orange-400">{project.projecttitle}</h2>
         <div className={`w-2 h-2 rounded-full ${statusColor}`}></div>
       </div>
 
       <div className="mt-4">
         {project.description.map((desc, index) => (
-          <p key={index} className="text-gray-300 dark:text-indigo-400 mb-2">
+          <p key={index} className="text-gray-300 dark:text-black mb-2">
             {desc}
           </p>
         ))}
@@ -96,7 +96,7 @@ const ProjectCard = ({ project, index }) => {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-indigo-400 hover:text-indigo-300 transition-colors"
+              className="demo-link-button text-indigo-400 dark:text-black transition-colors"
             >
               View Demo
             </a>
@@ -110,14 +110,14 @@ const ProjectCard = ({ project, index }) => {
           whileHover={{y:-3}}
           transition={{duration:0.2}}
             key={index}
-            className="bg-gray-700 text-white px-2 py-1 rounded text-sm"
+            className="bg-gray-700 dark:bg-orange-200 dark:text-black text-white px-2 py-1 rounded text-sm"
           >
             {tech}
           </motion.span>
         ))}
       </div>
 
-      <div className="mt-4 text-sm text-gray-400">{project.year}</div>
+      <div className="mt-4 text-sm text-gray-400 dark:text-black">{project.year}</div>
     </motion.div>
   );
 };
@@ -135,7 +135,7 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           className="flex justify-between items-center mb-6 lg:mb-12 p-2"
         >
-          <h1 className="text-4xl font-bold text-indigo-400 dark:text-indigo-800 border-l-4 border-indigo-400 pl-4">
+          <h1 className="text-4xl font-bold text-indigo-400 dark:text-yellow-400 border-l-4 border-indigo-400 dark:border-yellow-400 pl-4">
             Projects
           </h1>
         </motion.div>

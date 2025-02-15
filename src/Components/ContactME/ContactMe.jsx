@@ -4,6 +4,7 @@ import "../ContactME/ContactMe.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const ContactMe = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const sectionRef = useRef(null);
@@ -85,7 +86,7 @@ const ContactMe = () => {
                   id="name"
                   name="name"
                   placeholder="Enter your name"
-                  className="w-full p-3 rounded-lg bg-gray-800 text-white dark:text-black border border-gray-600 dark:border-black"
+                  className="w-full p-3 rounded-lg bg-gray-800 text-white dark:text-black border border-gray-600 "
                   required
                 />
               </motion.div>
@@ -120,7 +121,7 @@ const ContactMe = () => {
                     id="last-name"
                     name="last-name"
                     placeholder="Enter your last name"
-                    className="w-full p-3 rounded-lg bg-gray-800 dark:text-black text-white border border-gray-600"
+                    className="w-full p-3 rounded-lg bg-gray-800 dark:text-black text-white border dark:border-gray-600"
                     required
                   />
                 </div>
@@ -160,7 +161,7 @@ const ContactMe = () => {
             </div>
             <label
               htmlFor="toggle-switch"
-              className="text-gray-300 text-sm font-medium cursor-pointer"
+              className="text-gray-300 dark:text-black text-sm font-medium cursor-pointer"
               onClick={handleToggle}
             >
               {isExpanded ? 'Compress Form' : 'Expand Form'}
@@ -188,8 +189,8 @@ const ContactMe = () => {
           <motion.button
             type="submit"
             className="gradient-button w-full"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{ scale: 0.98 }}
+            whileTap={{ scale: 1.02 }}
           >
             Send Message
           </motion.button>
