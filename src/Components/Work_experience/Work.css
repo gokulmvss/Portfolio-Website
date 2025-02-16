@@ -16,6 +16,10 @@
    .experience-card.expanded {
     background-color: rgba(255, 255, 255, 0.1); /* Slightly darker background when expanded */
    }
+
+   .dark .experience-card.expanded {
+    background-color: rgba(188, 133, 69, 0.1); /* Slightly darker background when expanded */
+   }
        
 
    /* Initially hide expandable content */

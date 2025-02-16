@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef,useState } from "react";
 import { motion, useInView } from 'framer-motion';
-import "./skills.css"
+import "./Skills.css"
 
 const skills = [
   {
@@ -25,13 +25,13 @@ const skills = [
   },
   {
     name: "React",
-    category: "Frontend",
+    category: "Frameworks",
     logo: "react-original.svg"
   },
   {
     name: "Flask",
-    category: "Backend",
-    logo: "flask-original.svg"
+    category: "Frameworks",
+    logo: "flask-original-wordmark.svg"
   },
   {
     name: "PostgreSQL",
@@ -44,14 +44,34 @@ const skills = [
     logo: "mysql-original.svg"
   },
   {
+    name: "Oracle",
+    category: "Database",
+    logo: "oracle-original.svg"
+  },
+  {
     name: "OpenCV",
-    category: "Computer Vision",
+    category: "Frameworks",
     logo: "opencv-original.svg"
   },
   {
     name: "PyTorch",
-    category: "Machine Learning",
+    category: "Frameworks",
     logo: "pytorch-original.svg"
+  },
+  {
+    name: "Angular",
+    category: "Frameworks",
+    logo: "angular-original.svg"
+  },
+  {
+    name: "AmazonWebServices",
+    category: "Cloud Services",
+    logo: "amazonwebservices-original-wordmark.svg"
+  },
+  {
+    name: "Vercel",
+    category: "Cloud Services",
+    logo: "vercel-original-wordmark.svg"
   }
 ];
 
@@ -65,7 +85,7 @@ const SkillCard = ({ skill, index }) => {
     <div className="relative group">
       <motion.div
         ref={cardRef}
-        className="rounded-lg p-6 text-white dark:text-black backdrop-blur-sm relative z-10"
+        className="rounded-lg p-6 text-white dark:text-black relative z-10"
         initial={{ opacity: 0, rotateY: 90 }}
         animate={isInView ? { opacity: 1, rotateY: 0 } : { opacity: 0, rotateY: 90 }}
         transition={{
@@ -92,7 +112,7 @@ const SkillCard = ({ skill, index }) => {
           <motion.span
             whileHover={{y:-3}}
             transition={{duration:0.2}}
-            className="bg-gray-700 text-white px-2 py-1 rounded text-sm"
+            className="bg-gray-700 dark:bg-orange-200 text-white dark:text-black px-2 py-1 rounded text-sm"
           >
             {skill.category}
           </motion.span>
@@ -102,13 +122,6 @@ const SkillCard = ({ skill, index }) => {
       {/* Gradient Border */}
       <div 
         className="borders absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{
-          border: '5px solid transparent',
-          "borderImage": 'linear-gradient(135deg,#654321, #123456) 1', /* Gradient border */
-          filter: 'blur(1px)',
-          zIndex: 1,
-          pointerEvents: 'none'
-        }}
       />
     </div>
   );
@@ -118,6 +131,12 @@ const Skills = () => {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleExpand = () => {
+    setExpanded(!expanded);
+  };
+
 
   const filteredSkills = selectedCategory === "All"
     ? skills
@@ -132,9 +151,19 @@ const Skills = () => {
           transition={{ duration: 0.8 }}
           className="flex justify-between items-center lg:mb-12 "
         >
-          <h1 className="text-4xl font-bold text-indigo-400 dark:text-indigo-600 border-l-4 border-indigo-400 pl-4">
+          <h1 className="text-4xl font-bold text-indigo-400 dark:text-yellow-400 border-l-4 border-indigo-400 dark:border-yellow-400 pl-4">
             Skills
           </h1>
+
+          {/* Expand/Collapse Button */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={toggleExpand}
+            className="px-4 py-2 text-white hover:text-indigo-400 dark:text-yellow-400 dark:hover:text-orange-400"
+          >
+            {expanded ? 'Collapse all ↑' : 'Expand all ↓'}
+          </motion.button>
         </motion.div>
 
         <motion.div 
@@ -148,11 +177,13 @@ const Skills = () => {
               key={category}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => {
+                setSelectedCategory(category);
+              }}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 selectedCategory === category
-                  ? "bg-indigo-400 text-white"
-                  : "bg-gray-700 text-white hover:bg-gray-600"
+                  ? "bg-indigo-400 text-white dark:bg-orange-200 dark:text-black"
+                  : "bg-gray-700 dark:text-black dark:bg-yellow-200 text-white hover:bg-gray-600"
               }`}
             >
               {category}
@@ -160,11 +191,21 @@ const Skills = () => {
           ))}
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 border border-gray-700 rounded-lg text-white bg-gray-800/50 backdrop-blur-sm">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 border border-gray-700 rounded-lg text-white bg-gray-800/50 backdrop-blur-sm">
           {filteredSkills.map((skill, index) => (
             <SkillCard key={skill.name} skill={skill} index={index} />
           ))}
-        </div>
+        </div> */}
+
+        <motion.div
+          animate={{ height: expanded ? "auto" : "200px", overflow: "hidden" }}
+          transition={{ duration: 0.5 }}
+          className={`grid ${expanded ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" : "grid-cols-1 lg:grid-cols-4"} gap-6 border border-gray-700 rounded-lg text-white bg-gray-800/50 backdrop-blur-sm`}
+        >
+          {filteredSkills.map((skill, index) => (
+            <SkillCard key={skill.name} skill={skill} index={index} />
+          ))}
+        </motion.div>
       </div>
     </section>
   );

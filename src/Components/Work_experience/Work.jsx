@@ -11,10 +11,14 @@ const info = [
         duration: "Jan 2025 - Present",
         description:
         [
-            "Undergoing Industry-ready training to get to speed on upcoming technologies.",
-            '',
+            "Undergoing training in industry-relevant technologies and methodologies to develop expertise in developing advanced enterprise-level solutions",
+        ],
+        techstack:[
+          { name: "Angular", logo: "angular-original.svg" },
+          { name: "Spring", logo: "spring-original.svg" },
+          { name: "Java", logo: "java-original.svg" },
+          { name: "Oracle", logo: "oracle-original.svg" }
         ]
-
     },
     {
         jobTitle: "Data Science Intern",
@@ -23,10 +27,15 @@ const info = [
         duration: "Sept 2024 - Dec 2024",
         description:
         [
-            "Tasked to analyse NIR Spectral data captured from proprietary hardware and perform feature engineering for model training with target chemical variables",
-            'Conduct research and assist development on enhanced Machine Learning and Deep Learning solutions to aid developement of their ML based solution.'
+          "Conducted an in-depth analysis of NIR spectral data for soil properties, identifying key patterns and providing insights for model development. ",
+          "Researched and implemented solutions for the inherent biased dataset problem, explored methodologies to enhance the existing solution offered, and assisted in drafting research papers and data visualization."
+        ],
+        techstack:[
+          { name: "Python", logo: "python-original.svg" },
+          { name: "Pandas", logo: "pandas-original.svg" },
+          { name: "Matplotlib", logo: "matplotlib-original.svg" },
+          { name: "Scikitlearn", logo: "scikitlearn-original.svg" }
         ]
-
     },
     {
         jobTitle: "Research Intern",
@@ -34,13 +43,52 @@ const info = [
         location: "On-site, Bangalore, India",
         duration: "Jun 2024 - Jul 2024",
         description:[
-            'Worked on a Computer Vision project on Video footage analysis in collaboration with "Mindset Systems" ',
-            'Conducted research and gained experience working with various Computer Vision frameworks to develop a robust,comprehensive end-to-end framework.',
-            'Worked on the development of an end-to-end application, leading the backend team and integrating the full-stack application, using Python and PostgreSQL.'
+          "Worked on a Computer Vision project on Video footage analysis in collaboration with ”Mindset Systems.",
+          "Conducted research and gained experience with Computer Vision frameworks while leading backend development for a prototype end-to-end application, integrating a full-stack solution using Python and PostgreSQL.  " 
+        ],
+        techstack:[
+          { name: "Python", logo: "python-original.svg" },
+          { name: "OpenCV", logo: "opencv-original.svg" },
+          { name: "PostgreSql", logo: "postgresql-original.svg" },
+          { name: "Streamlit", logo: "streamlit-original.svg" }
         ]
-
     },
 ];
+
+const TechStack = ({ stack }) => {
+  if (!stack || stack.length === 0) return null;
+
+  return (
+    <motion.div 
+      className="techstack-container mt-4 flex flex-wrap gap-4 justify-start"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h1 className="text-sm font-bold text-white dark:text-black">
+        Tech Stack:
+        </h1>
+      {stack.map((skill, index) => (
+        <motion.div 
+          key={index}
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.2 }}
+          className="flex flex-col items-center justify-center"
+        >
+          <img
+            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.name.toLowerCase()}/${skill.logo}`}
+            alt={skill.name}
+            className="w-8 h-10"
+            onError={(e) => {
+              e.target.src = "/api/placeholder/64/64";
+            }}
+          />
+          {/* <h3 className="text-sm text-white dark:text-black">{skill.name}</h3> */}
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+};
 
 const Work = () => {
   const [expandedIndices, setExpandedIndices] = useState([]);
@@ -181,6 +229,8 @@ const Work = () => {
                     </li>
                 ))}
                 </ul>
+
+                <TechStack stack={experience.techstack} />
             </motion.div>
             )}
             </AnimatePresence>

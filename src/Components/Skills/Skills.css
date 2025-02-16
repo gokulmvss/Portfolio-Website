@@ -1,0 +1,10 @@
+.borders {
+    border: 5px solid transparent;
+    border-image: linear-gradient(135deg, var(--border-dark-start), var(--border-dark-end)) 1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.dark .borders{
+    border-image: linear-gradient(135deg, var(--border-light-start), var(--border-light-end)) 1;
+}

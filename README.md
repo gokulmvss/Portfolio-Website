@@ -6,3 +6,14 @@ Currently Working on the optimization of the website and deployment of it on a c
 
 The tech stack used : Vite + React, Tailwind CSS . 
 
+To run the repo :
+1) git clone the repository
+2) cd Portfolio-Website
+3) npm install
+4) npm run build
+5) npm run dev
+6) npm run dev 
+
+The website will be loaded on localhost server in the local machine.
+
+
