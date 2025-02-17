@@ -3,7 +3,7 @@ import { Menu, X, Sun, Moon } from 'lucide-react';
 import { cn } from '../../utils/utils';
 import logo from '../../assets/condensed-logo-bgno.png';
 import logolight from '../../assets/condensed-logo-bgno-lightmode.png';
-import "../NavBar/Navbar.css";
+import "./NavBar.css";
 import {motion} from "framer-motion";
 import { useTheme } from '../../Context/ThemeContext';
 
