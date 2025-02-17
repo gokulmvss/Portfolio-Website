@@ -174,38 +174,40 @@ const NavBar = ({ scrollToSection, refs }) => {
             <ConnectButton />
           </div>
 
-          <div className="md:hidden">
+          {/* <div className="md:hidden">
             <button
               className="text-2xl cursor-pointer"
               onClick={() => setIsOpen(!isOpen)}
             >
               {!isOpen && <Menu />}
             </button>
-          </div>
+          </div> */}
         </div>
-        {isOpen && (
-  <div className={`fixed top-0 left-0 flex flex-col items-center justify-center w-full h-screen 
-                   bg-dark-primary text-light-primary
-                   dark:bg-light-primary dark:text-dark-primary
-                   bg-opacity-80 backdrop-blur-sm 
-                   transition-transform duration-300 z-50 
-                   ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-    <button
-      className="absolute text-2xl cursor-pointer top-7 right-5"
-      onClick={() => setIsOpen(false)}
-    >
-      <X />
-    </button>
-    <ul className="flex flex-col text-2xl gap-y-10">
-      {navSections.map(section => (
-        <NavigationLink key={section.name} section={section}/>
-      ))}
-    </ul>
-    <div className="mt-10">
-      <ConnectButton />
-    </div>
-  </div>
-)}
+
+
+        {/* {isOpen && (
+        <div className={`fixed top-0 left-0 flex flex-col items-center justify-center w-full h-screen 
+                        bg-dark-primary text-light-primary
+                        dark:bg-light-primary dark:text-dark-primary
+                        bg-opacity-80 backdrop-blur-sm 
+                        transition-transform duration-300 z-50 
+                        ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+          <button
+            className="absolute text-2xl cursor-pointer top-7 right-5"
+            onClick={() => setIsOpen(false)}
+          >
+            <X />
+          </button>
+          <ul className="flex flex-col text-2xl gap-y-10">
+            {navSections.map(section => (
+              <NavigationLink key={section.name} section={section}/>
+            ))}
+          </ul>
+          <div className="mt-10">
+            <ConnectButton />
+          </div>
+          </div> */}
+{/* )} */}
       </nav>
     </div>
   );

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, Instagram} from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import './About.css';
 import photo1 from '../../assets/photo1.png';
 
-
-const About = () => {
+const About = ({ scrollToSection, refs }) => {
+  // console.log("Refs in About component:", refs); // Debugging
   const leftSectionRef = useRef(null);
   const rightSectionRef = useRef(null);
   const isLeftInView = useInView(leftSectionRef, { once: true, margin: "-100px" });
@@ -64,26 +64,45 @@ const About = () => {
         className="about-right rounded-lg p-6 shadow-inner"
       >
         <div className="text-container">
-        <p className="mb-6">
-          Hi, I'm <span className="font-semibold">Gokul Mallem</span>, a final-year <span className="font-semibold">ECE student at PES University, Bangalore</span>. 
-          I specialize in <span className="font-semibold">Full-Stack Development</span> and <span className="font-semibold">Machine Learning</span>, building scalable solutions that merge technology with real-world impact.
-        </p>
+          <p className="mb-6">
+            Hey there! I'm <span className="font-semibold">Gokul Mallem</span>, a final-year <span className="font-semibold">ECE student at PES University, Bangalore</span>.  
+            I thrive at the intersection of <span className="font-semibold">Full-Stack Development</span> and <span className="font-semibold">Machine Learning</span>,  
+            building scalable tech solutions that create real-world impact—because what’s the point of innovation if it doesn’t hit the road?
+          </p>
 
-        <p className="mb-6">
-          My academic journey has strengthened my expertise in electronics, communication systems, and software engineering. I've complemented my coursework with hands-on projects that emphasize innovation and collaboration.
-        </p>
+          <p className="mb-6">
+            My academic journey has deepened my understanding of electronics and communication systems while keeping me grounded in software engineering concepts.  
+            I love bringing ideas to life through hands-on projects that push boundaries and encourage collaboration.
+          </p>
 
-        <p className="mb-6">
-          Professionally, I have worked on a <span className="font-semibold">job-seeking app</span> with recruiter dashboards and a <span className="font-semibold">Retrieval-Augmented Generation (RAG) system</span> for personalized pharma recommendations. These projects refined my skills in <span className="font-semibold">React, Flask, Python, and SQL</span>.
-        </p>
+          <p className="mb-6">
+            Professionally, I've worked on a range of projects, from <span className="font-semibold">Computer Vision Applications</span> to real-time analysis of NIR-spectral data.  
+            You can check it out in the<span className="font-semibold text-indigo-400 dark:text-orange-400 cursor-pointer"> Professional Experience section </span>.
+            {/* onClick={() =>  */}
+              {/* console.log("workRef before calling scrollToSection:", refs.workRef); */}
+                {/* scrollToSection(refs.WorkRef)}}>  */}
+                 
+            My personal projects, which include full-stack applications (like a job-search platform) and deploying Machine Learning for accessibility,  
+            are showcased in the  
+            <span className="font-semibold text-green-400 dark:text-orange-400 cursor-pointer" onClick={() => navigateToSection('projects-section')}> Projects section</span>.  
+            Be sure to check them out !
+          </p>
 
-        <p className="mb-6">
-          Currently, I'm integrating <span className="font-semibold">ML models into web applications</span>, enhancing UX with predictive analytics and recommendation systems while exploring cloud scalability.
-        </p>
+          <p className="mb-6">
+            Beyond coding, you'll often find me capturing moments through my <span className="font-semibold">capturing the facinations of nature by photography</span>, chasing the thrill of <span className="font-semibold">racing</span>,  
+            or enjoying a good game of <span className="font-semibold">sports</span>. Whether it's pixels, speed, or strategy—I love a challenge!
+          </p>
 
-        <p className="mb-6">
-          Check out my <span className="font-semibold text-indigo-400 dark:text-indigo-600 cursor-pointer" onClick={() => navigateToSection('projects-section')}>projects</span> or reach out through the <span className="font-semibold text-green-400 cursor-pointer" onClick={() => navigateToSection('contact-section')}>Contact Me</span> section!
-        </p>
+          <p className="mb-6">
+            Right now, I'm exploring new technologies, particularly integrating <span className="font-semibold">ML models into web applications, and learning technologies to </span> to make systems deployable and scalable at an enterprise level.
+          </p>
+
+          <p className="mb-6">
+            Feel free to explore my page, check out my work, and if anything sparks your interest (or if you just want to talk tech, photography, or racing),  
+            hit me up through the <span className="font-semibold text-green-400 cursor-pointer" onClick={() => navigateToSection('contact-section')}>Contact Me</span> section or my socials linked below.  <br />
+            Let’s build something awesome!
+          </p>
+
 
 
 
@@ -105,13 +124,41 @@ const About = () => {
               <Linkedin size={30} />
             </a>
             <a
-              href="https://github.com/gokulmvss?tab=repositories"
+              href="https://github.com/gokulmvss/gokulmvss"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-200 dark:hover-text-black-600 transition-colors"
             >
               <Github size={30} />
             </a>
+
+            {/* <a
+              href="https://github.com/gokulmvss/gokulmvss"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-pink-400 dark:hover-text-black-600 transition-colors"
+            >
+              <Instagram size={30} />
+            </a> */}
+
+            {/* <a
+              href="https://leetcode.com/u/G0kew1/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-gray-200 dark:hover-text-black-600 transition-colors"
+            >
+              <LucideIcon
+                size={30}
+                className="fill-current"
+                viewBox="0 0 24 24"
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    <path fill="currentColor" d="M14.085 0L7.932 6.153L10.89 9.11l4.064-4.064l3.79 3.791l-3.79 3.791l-4.064-4.064L7.931 11.62l6.154 6.154l7.58-7.58l-7.58-7.58zm-7.58 9.72l-4.095 4.095l4.095 4.095l2.958-2.957l-4.074-4.074zm4.053 7.053L8.504 18.83l6.153 6.153l6.153-6.154l-2.954-2.955l-3.2 3.2l-3.099-3.1z"/>
+                  `,
+                }}
+              />
+            </a> */}
+
           </div>
         </div>
       </motion.div>
@@ -120,132 +167,3 @@ const About = () => {
 };
 
 export default About;
-
-
-
-
-// import React,{ useEffect, useState } from 'react';
-// import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
-// import photo1 from '../../assets/photo1.png';
-// import './About.css';
-// import { motion, AnimatePresence  } from 'framer-motion';
-
-// const About = () => {
-//   const navigateToSection = (sectionId) => {
-//     const section = document.getElementById(sectionId);
-//     if (section) {
-//       section.scrollIntoView({ behavior: 'smooth' });
-//     }
-//   };
-// const isMobile = window.innerWidth <= 768;
-// const [isVisible, setIsVisible] = useState(false);
-//   return (
-    
-//     <motion.div 
-//     initial={{ opacity: 0}}
-//     animate={{ opacity: 1 }}
-//     transition={{ duration: 1 }}
-//     className="about-container flex flex-col lg:flex-row p-8 rounded-lg shadow-lg bg-black-800 text-white"
-//     >
-//       {/* Left Section: Heading and Image */}
-//       <motion.div className="about-left flex flex-col items-center lg:items-start lg:w-1/3 p-4"
-//        initial={{ scale: 0.8, opacity:0}}
-//        animate={{ scale: 1, opacity:1 }}
-//     //    transition={{
-//     //      duration: 1,
-//     //      ease: 'easeInOut',
-//     //  }}
-//     transition={{ type: "spring", duration:2, bounce: 0.5 }}
-  
-//     >
-//         {/* Heading */}
-//         <h1 className="text-4xl font-bold text-indigo-400 border-l-4 border-indigo-400 pl-4 mb-6 lg:mb-12">
-//           About Me
-//         </h1>
-//         {/* Image */}
-//         <motion.div
-//          className="image-container"
-//          whileHover={{
-//           scale: 1.05,
-//           transition: { duration: 1 },
-//         }}
-//         whileTap={{ scale: 0.9 }}
-//         >
-//           <img
-//             src={photo1}
-//             alt="Gokul Mallem"
-//             className="profile-image rounded-full shadow-lg h-48 w-48 object-cover"
-//           />
-//         </motion.div>
-//       </motion.div>
-
-//       {/* Right Section: Text Content */}
-//       <motion.div 
-//       initial={{ opacity: 0, x: isMobile ? 0 : "18vw", y: isMobile ? "20vh" : 0 }}
-//       animate={{ opacity: 1, x: isMobile ? 0 : "0vw", y: isMobile ? "0vh" : 0 }}
-//       transition={{ duration: 1, delay: isMobile ? 1.5 : 2, ease: "easeInOut" }}
-
-//       className="about-right bg-gray-700 rounded-lg p-6 shadow-inner">
-//         <div className="text-container">
-//           {/* Introduction */}
-//           <p className="mb-6">
-//             Hi, I’m <span className="font-semibold">Gokul Mallem</span>, a final-year Electronics and Communication Engineering (ECE) student at <span className="font-semibold">PES University, Bangalore</span>. I have a passion for bridging cutting-edge technology with practical applications, especially in <span className="font-semibold">Full-Stack Development</span> and <span className="font-semibold">Machine Learning</span>. My goal is to create scalable, impactful solutions that make a difference.
-//           </p>
-
-//           {/* Education */}
-//           <p className="mb-6">
-//             My academic journey has provided a strong foundation in electronics, communication systems, and software engineering. At PES University, I’ve honed my technical expertise, balancing coursework with hands-on projects that emphasize innovation and collaboration.
-//           </p>
-
-//           {/* Work Experience */}
-//           <p className="mb-6">
-//             In my previous roles, I have worked on various impactful projects, including a <span className="font-semibold">job-seeking application</span> with advanced filtering features and recruiter dashboards, and a <span className="font-semibold">Retrieval-Augmented Generation (RAG) system</span> for personalized recommendations in the pharmaceutical industry. These experiences have solidified my skills in tools like <span className="font-semibold">React, Flask, Python, and SQL</span>, and have given me invaluable insight into end-to-end application development.
-//           </p>
-
-//           {/* Current Work */}
-//           <p className="mb-6">
-//             Currently, I am exploring the integration of <span className="font-semibold">Machine Learning models</span> in web applications, focusing on enhancing user experiences with predictive analytics and recommendation systems. I’m also delving into the nuances of cloud computing to expand the scalability of my projects.
-//           </p>
-
-//           {/* Closing with navigation links */}
-//           <p className="mb-6">
-//             Explore my <span className="font-semibold text-indigo-400 cursor-pointer" onClick={() => navigateToSection('projects-section')}>projects and work experience</span> to learn more about what I’ve done so far. If you’d like to connect or collaborate, feel free to reach out through the <span className="font-semibold text-green-400 cursor-pointer" onClick={() => navigateToSection('contact-section')}>Contact Me</span> section!
-//           </p>
-
-//           <div className="social-links flex items-center mt-6 space-x-4">
-//            <a
-//             href="mailto:mallemgokul@gmail.com"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="text-gray-600 hover:text-red-500 transition"
-//           >
-//             <FaEnvelope size={30} />
-//           </a>
-//           <a
-//             href="https://www.linkedin.com/in/gokul-mallem-vss-b99461269/"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="text-gray-600 hover:text-blue-600 transition"
-//           >
-//             <FaLinkedin size={30} />
-//           </a>
-//           <a
-//             href="https://github.com/gokulmvss?tab=repositories"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="text-gray-600 hover:text-gray-800 transition"
-//           >
-//             <FaGithub size={30} />
-//           </a>
-          
-//         </div>
-//         </div>
-//       </motion.div>
-//     </motion.div>
-//   );
-// };
-
-// export default About;
-
-
-
