@@ -12,7 +12,6 @@ To run the repo :
 3) npm install
 4) npm run build
 5) npm run dev
-6) npm run dev 
 
 The website will be loaded on localhost server in the local machine.
 
