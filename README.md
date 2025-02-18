@@ -1,4 +1,4 @@
-Portfolio Website:
+### Portfolio Website: ###
 
 This repository contains the code files utilized to design my portfolio website. This project showcases my abilities with utilizing and implementing different features of the React JS and Tailwind CSS framework.
 
@@ -15,5 +15,7 @@ To run the repo :
 6) npm run dev 
 
 The website will be loaded on localhost server in the local machine.
+
+The project is successfully deployed on Vercel, check it out here <a href="https://gokulmallem.vercel.app/" >
 
 
