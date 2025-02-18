@@ -16,6 +16,7 @@ To run the repo :
 
 The website will be loaded on localhost server in the local machine.
 
-The project is successfully deployed on Vercel, check it out here <a href="https://gokulmallem.vercel.app/" >
+The project is successfully deployed on Vercel, check it out here <a href="https://gokulmallem.vercel.app/" target="_blank" > Portfolio </a>
+
 
 
